@@ -1990,7 +1990,7 @@ name := $(TARGET_PRODUCT)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
 endif
-name := aosp-caf-n-mr1-$(shell date +%Y%m%d)-$(TARGET_DEVICE)
+name := Infinitive-OS-v0.1-$(TARGET_DEVICE)--$(shell date +%Y%m%d)-$(shell date +%H%M)-alpha
 
 INTERNAL_OTA_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 
