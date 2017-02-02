@@ -1,6 +1,9 @@
 
 # List of variables we want to print in the build banner.
 print_build_config_vars := \
+  IO_VERSION \
+  IO_DEVICE \
+  IO_BUILDTYPE \
   PLATFORM_VERSION_CODENAME \
   PLATFORM_VERSION \
   TARGET_PRODUCT \

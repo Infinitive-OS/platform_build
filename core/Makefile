@@ -2019,6 +2019,12 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE)
 
 .PHONY: otapackage
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+	echo ""
+	echo "===========-Package complete-==========="
+	echo "zip:  $(INTERNAL_OTA_PACKAGE_TARGET)"
+	echo "size: `ls -lah $(INTERNAL_OTA_PACKAGE_TARGET) | cut -d ' ' -f 5`"
+	echo "========================================"
+	echo ""
 
 endif    # build_ota_package
 
@@ -2034,7 +2040,7 @@ name := $(name)-img-$(FILE_NAME_TAG)
 INTERNAL_UPDATE_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 
 $(INTERNAL_UPDATE_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE)
-	@echo "Package: $@"
+
 	$(hide) PATH=$(foreach p,$(INTERNAL_USERIMAGES_BINARY_PATHS),$(p):)$$PATH MKBOOTIMG=$(MKBOOTIMG) \
 	   ./build/tools/releasetools/img_from_target_files -v \
 	   -p $(HOST_OUT) \
